@@ -738,20 +738,12 @@ const courseCompleted = courseChallenges.filter(
           marginBottom: 20,
         }}
       >
-        <div>
-          <div
-            style={{
-              ...pixelText,
-              color: colours.paleGold,
-              fontSize: 17,
-            }}
-          >
-    
-          
-          <div style={{ ...mutedLabel, fontSize: 7 }}>
-          
-          </div>
+      
+      <div>
+        <div style={{ ...mutedLabel, fontSize:7}}>
+          By Amogh Acharjee And Prabhav Kanoi
         </div>
+      </div>
         <div
           style={{
             background: '#263247',
