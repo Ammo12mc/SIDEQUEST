@@ -708,6 +708,32 @@ const courseCompleted = courseChallenges.filter(
 >
     
             <style>{`
+        @media (min-width: 700px) {
+          body {
+            background-color: #101722;
+            background-image: radial-gradient(#29384A 1px, transparent 1px);
+            background-size: 24px 24px;
+          }
+
+          main::before,
+          main::after {
+            content: "SIDEQUEST";
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #D6B96C;
+            font-family: monospace;
+            font-size: 11px;
+            letter-spacing: 3px;
+            writing-mode: vertical-rl;
+            opacity: 0.5;
+            pointer-events: none;
+          }
+
+          main::before { left: 35px; }
+          main::after { right: 35px; }
+        }
+
         button {
           transition: filter 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
           -webkit-tap-highlight-color: transparent;
