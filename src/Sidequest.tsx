@@ -669,6 +669,13 @@ const courseCompleted = courseChallenges.filter(
     setStage(3);
   }
 
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}, [page, selectedCourse, selectedChallenge, stage]);
+
   function goHome() {
     setSelectedChallenge(null);
     setSelectedCourse('');
