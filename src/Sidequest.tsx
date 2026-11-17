@@ -691,17 +691,22 @@ const courseCompleted = courseChallenges.filter(
   };
 
   return (
-    <main
-      style={{
-        minHeight: '100vh',
-        background: colours.bg,
-        color: colours.text,
-        padding: '16px 14px 100px',
-        fontFamily: "'VT323', monospace",
-        fontSize: 20,
-        boxSizing: 'border-box',
-      }}
-    >
+   <main
+  style={{
+    minHeight: '100vh',
+    background: colours.bg,
+    color: colours.text,
+    padding: '16px 14px 100px',
+    fontFamily: "'VT323', monospace",
+    fontSize: 20,
+    boxSizing: 'border-box',
+    width: '100%',
+    maxWidth: 480,
+    margin: '0 auto',
+    position: 'relative',
+  }}
+>
+    
             <style>{`
         button {
           transition: filter 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
