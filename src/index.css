@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  font-family: 'VT323', monospace;
+  color: #f4f0df;
+  background: #171c27;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --bg: #171c27;
+  --panel: #30394a;
+  --panel-dark: #222b3b;
+  --blue: #2878d0;
+  --blue-light: #55a6f5;
+  --gold: #e69a35;
+  --gold-light: #ffc45c;
+  --text: #f4f0df;
+  --muted: #aab5c5;
+  --border: #101722;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: 'VT323', monospace;
+  font-size: 21px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.pixel-title {
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.pixel-panel {
+  background: var(--panel);
+  border: 4px solid var(--border);
+  box-shadow:
+    0 4px 0 #0c111a,
+    inset 3px 3px 0 rgba(255,255,255,0.08);
+}
+
+.pixel-button {
+  border: 3px solid var(--border);
+  box-shadow: 0 4px 0 #0c111a;
+  image-rendering: pixelated;
+  transition: transform 0.08s;
+}
+
+.pixel-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #0c111a;
+}
+
+::selection {
+  background: var(--gold);
+  color: #171c27;
+}
