@@ -1,32 +1,38 @@
-# React + TypeScript + Vite
+SIDEQUEST
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Learn real-world skills through interactive challenges.
 
-Currently, two official plugins are available:
+SIDEQUEST is an interactive learning platform designed to help users explore practical skills through guided courses and challenges.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Features
 
-## React Compiler
+- Interactive Courses: Explore different skill-based courses.
+- Guided Challenges: Learn through explanations, examples and practical tasks.
+- XP System: Earn 20 XP for every completed challenge.
+- Progress Tracking: Keep track of completed challenges.
+- Progress Saving: Your XP and completed challenges are saved in your browser.
+- Responsive Design: Works on both mobile phones and computers.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Built With
 
-## Expanding the Oxlint configuration
+- React
+- TypeScript
+- Vite
+- CSS
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+How to Use
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+1. Open SIDEQUEST using the live website link.
+2. Explore the available courses.
+3. Select a challenge.
+4. Read the learning material and example.
+5. Complete the task.
+6. Earn XP and track your progress.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Future Improvements
+
+- More courses and challenges
+- Achievements and badges
+- User accounts and cloud-based progress syncing
+
+---
