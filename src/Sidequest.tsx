@@ -446,54 +446,6 @@ const bodyText: CSSProperties = {
   color: '#D5DCE8',
 };
 
-function PixelScene() {
-  return (
-    <svg
-      viewBox="0 0 320 170"
-      width="100%"
-      role="img"
-      aria-label="Pixel-art landscape with mountains, a sunset and an adventurer"
-      style={{ display: 'block', imageRendering: 'pixelated' }}
-    >
-      <rect width="320" height="170" fill="#17283F" />
-      <rect x="0" y="18" width="320" height="2" fill="#263D5C" />
-      <rect x="35" y="30" width="40" height="40" fill="#E69A35" />
-      <rect x="43" y="22" width="24" height="8" fill="#E69A35" />
-      <rect x="27" y="38" width="8" height="24" fill="#E69A35" />
-      <rect x="75" y="38" width="8" height="24" fill="#E69A35" />
-      <rect x="43" y="70" width="24" height="8" fill="#E69A35" />
-      <rect x="0" y="95" width="320" height="75" fill="#243B48" />
-      <path d="M0 105 L55 53 L110 105 Z" fill="#304D62" />
-      <path d="M65 105 L135 38 L205 105 Z" fill="#385B70" />
-      <path d="M180 105 L245 52 L320 105 Z" fill="#304D62" />
-      <path
-        d="M0 130 L70 94 L130 130 L200 90 L270 130 L320 105 L320 170 L0 170 Z"
-        fill="#315B4A"
-      />
-      <path
-        d="M0 145 L80 120 L150 145 L220 115 L320 145 L320 170 L0 170 Z"
-        fill="#244B40"
-      />
-      <rect x="18" y="112" width="8" height="17" fill="#E69A35" />
-      <rect x="10" y="120" width="24" height="6" fill="#E69A35" />
-      <rect x="267" y="106" width="8" height="24" fill="#E69A35" />
-      <rect x="259" y="114" width="24" height="6" fill="#E69A35" />
-      <rect x="145" y="115" width="24" height="28" fill="#17283F" />
-      <rect x="151" y="104" width="12" height="12" fill="#E69A35" />
-      <rect x="140" y="124" width="8" height="18" fill="#17283F" />
-      <rect x="166" y="124" width="8" height="18" fill="#17283F" />
-      <rect x="146" y="142" width="9" height="10" fill="#101722" />
-      <rect x="160" y="142" width="9" height="10" fill="#101722" />
-      <rect x="150" y="118" width="14" height="12" fill="#2878D0" />
-      <rect x="155" y="121" width="3" height="3" fill="#F4F0DF" />
-      <rect x="220" y="20" width="4" height="4" fill="#F4F0DF" />
-      <rect x="250" y="35" width="4" height="4" fill="#F4F0DF" />
-      <rect x="290" y="15" width="4" height="4" fill="#F4F0DF" />
-      <rect x="105" y="18" width="4" height="4" fill="#F4F0DF" />
-    </svg>
-  );
-}
-
 function PixelIcon({ type, colour }: { type: string; colour: string }) {
   return (
     <svg
@@ -794,10 +746,10 @@ const courseCompleted = courseChallenges.filter(
               fontSize: 17,
             }}
           >
-            SIDEQUEST<span style={{ color: colours.blue }}>.</span>
-          </div>
+    
+          
           <div style={{ ...mutedLabel, fontSize: 7 }}>
-            REAL SKILLS. SIDE QUESTS.
+          
           </div>
         </div>
         <div
@@ -819,7 +771,35 @@ const courseCompleted = courseChallenges.filter(
           <Panel style={{ padding: 0, overflow: 'hidden' }}>
           <p style={{ color: 'white' }}>
 </p>
-            <PixelScene />
+<div style={{
+  background: '#1B2637',
+  borderBottom: '3px solid #101722',
+  padding: '20px 16px',
+  textAlign: 'center',
+}}>
+  <div style={{
+    ...pixelText,
+    color: colours.paleGold,
+    fontSize: 18,
+  }}>
+    SIDEQUEST<span style={{ color: colours.blue }}>.</span>
+  </div>
+
+  <div style={{
+    ...mutedLabel,
+    color: colours.green,
+    marginTop: 8,
+  }}>
+    REAL SKILLS. SIDE QUESTS.
+  </div>
+
+  <div style={{
+    ...bodyText,
+    marginTop: 8,
+  }}>
+    A new way to level up your real life.
+  </div>
+</div>
             <div style={{ padding: 18 }}>
               <div style={{ ...mutedLabel, color: colours.gold }}>
                 YOUR ADVENTURE BEGINS
