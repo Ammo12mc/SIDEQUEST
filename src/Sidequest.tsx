@@ -821,13 +821,26 @@ export default function Sidequest() {
 </p>
 
         <button
-        className="intro-button"
-          onClick={() =>{
-              setExiting(true);
-            setTimeout(()=>setStarted(true),800);
-          }}
-          <main>
-          style={{
+  className="intro-button"
+  onClick={() => {
+    setExiting(true);
+    setTimeout(() => setStarted(true), 800);
+  }}
+  style={{
+    marginTop: 35,
+    padding: '16px 40px',
+    background: '#D6B96C',
+    color: '#101722',
+    border: 'none',
+    borderRadius: 8,
+    fontSize: 16,
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    transition: 'transform 0.2s ease, box-shadow 0.3s ease'
+  }}
+>
+  START QUEST →
+</button>
             marginTop: 35,
             padding: '16px 40px',
             background: '#D6B96C',
