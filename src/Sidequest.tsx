@@ -1,7 +1,3 @@
-
-Sidequest.tsx
-
-100%
 import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 
@@ -1773,4 +1769,3 @@ export default function Sidequest() {
     </>
   );
 }
-Displaying Sidequest.tsx.
