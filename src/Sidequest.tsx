@@ -589,6 +589,7 @@ function ProgressBar({ value, total }: { value: number; total: number }) {
 
 export default function Sidequest() {
   const [started, setStarted] = useState(false);
+  const[exiting, setExiting]=useState(false);
   const [page, setPage] = useState('home');
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(
@@ -699,7 +700,7 @@ export default function Sidequest() {
   };
   if (!started) {
     return (
-      <main className="intro-screen" style={{
+      <main className={exiting? 'intro-screen intro-exit': 'intro-screen'} style={{
         minHeight: '100vh',
         background: '#101722',
         color: '#D6B96C',
@@ -775,6 +776,16 @@ export default function Sidequest() {
 .intro-screen {
   animation: screenFade 1.2s ease-out both;
 }
+  @keyframes introExit {
+  to {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+.intro-exit {
+  animation: introExit 0.45s ease-in forwards;
+}
 `}</style>
 <div style={{
   position: 'absolute',
@@ -811,7 +822,11 @@ export default function Sidequest() {
 
         <button
         className="intro-button"
-          onClick={() => setStarted(true)}
+          onClick={() =>{
+              setExiting(true);
+            setTimeout(()=>setStarted(true),450);
+          }}
+          <main>
           style={{
             marginTop: 35,
             padding: '16px 40px',
