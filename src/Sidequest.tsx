@@ -684,7 +684,7 @@ export default function Sidequest() {
   }
 
   function toggleCheck(item: string) {
-    setChecks((prfevious) =>
+    setChecks((previous) =>
       previous.includes(item)
         ? previous.filter((value) => value !== item)
         : [...previous, item]
