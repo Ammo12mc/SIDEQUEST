@@ -835,7 +835,6 @@ export default function Sidequest() {
   className="intro-button"
   onClick={() => {
     setExiting(true);
-    console.log('Exiting:', true);
     setTimeout(() => setStarted(true), 2000);
   }}
   style={{
