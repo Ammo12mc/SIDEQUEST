@@ -634,15 +634,15 @@ export default function Sidequest() {
 
   const isPassword = selectedChallenge?.id === 1;
   const courseChallenges =
-  selectedCourse === 'Digital Survivor'
-    ? challenges
-    : extraChallenges.filter(
+    selectedCourse === 'Digital Survivor'
+      ? challenges
+      : extraChallenges.filter(
         (challenge) => challenge.course === selectedCourse
       );
 
-const courseCompleted = courseChallenges.filter(
-  (challenge) => completed.includes(challenge.id)
-).length;
+  const courseCompleted = courseChallenges.filter(
+    (challenge) => completed.includes(challenge.id)
+  ).length;
   const passwordValid =
     practice.length >= 12 &&
     /[A-Z]/.test(practice) &&
@@ -671,11 +671,11 @@ const courseCompleted = courseChallenges.filter(
   }
 
   useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-}, [page, selectedCourse, selectedChallenge, stage]);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [page, selectedCourse, selectedChallenge, stage]);
 
   function goHome() {
     setSelectedChallenge(null);
@@ -697,66 +697,66 @@ const courseCompleted = courseChallenges.filter(
     fontSize: 15,
     overflowWrap: 'anywhere',
   };
-if (!started) {
+  if (!started) {
     return (
-        <main style={{
-              minHeight: '100vh',
-                    background: '#101722',
-                          color: '#D6B96C',
-                                display: 'flex',
-                                      flexDirection: 'column',
-                                            justifyContent: 'center',
-                                                  alignItems: 'center',
-                                                        textAlign: 'center',
-                                                              padding: 24,
-                                                                    fontFamily: 'monospace',
-                                                                        }}>
-                                                                              <h1 style={{ fontSize: 48, letterSpacing: 5 }}>
-                                                                                      SIDEQUEST
-                                                                                            </h1>
+      <main style={{
+        minHeight: '100vh',
+        background: '#101722',
+        color: '#D6B96C',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        padding: 24,
+        fontFamily: 'monospace',
+      }}>
+        <h1 style={{ fontSize: 48, letterSpacing: 5 }}>
+          SIDEQUEST
+        </h1>
 
-                                                                                                  <p style={{ color: '#FFFFFF', fontSize: 15 }}>
-                                                                                                          Your next skill starts here.
-                                                                                                                </p>
+        <p style={{ color: '#FFFFFF', fontSize: 15 }}>
+          Your next skill starts here.
+        </p>
 
-                                                                                                                      <button
-                                                                                                                              onClick={() => setStarted(true)}
-                                                                                                                                      style={{
-                                                                                                                                                marginTop: 35,
-                                                                                                                                                          padding: '16px 40px',
-                                                                                                                                                                    background: '#D6B96C',
-                                                                                                                                                                              color: '#101722',
-                                                                                                                                                                                        border: 'none',
-                                                                                                                                                                                                  borderRadius: 8,
-                                                                                                                                                                                                            fontSize: 16,
-                                                                                                                                                                                                                      fontWeight: 'bold',
-                                                                                                                                                                                                                                cursor: 'pointer',
-                                                                                                                                                                                                                                        }}
-                                                                                                                                                                                                                                              >
-                                                                                                                                                                                                                                                      START QUEST →
-                                                                                                                                                                                                                                                            </button>
-                                                                                                                                                                                                                                                                </main>
-                                                                                                                                                                                                                                                                  );
-                                                                                                                                                                                                                                                                  }
+        <button
+          onClick={() => setStarted(true)}
+          style={{
+            marginTop: 35,
+            padding: '16px 40px',
+            background: '#D6B96C',
+            color: '#101722',
+            border: 'none',
+            borderRadius: 8,
+            fontSize: 16,
+            fontWeight: 'bold',
+            cursor: 'pointer',
+          }}
+        >
+          START QUEST →
+        </button>
+      </main>
+    );
+  
 }
-  return (
-   <main
-  style={{
-    minHeight: '100vh',
-    background: colours.bg,
-    color: colours.text,
-    padding: '16px 14px 100px',
-    fontFamily: "'VT323', monospace",
-    fontSize: 20,
-    boxSizing: 'border-box',
-    width: '100%',
-    maxWidth: 480,
-    margin: '0 auto',
-    position: 'relative',
-  }}
->
-    
-            <style>{`
+return (
+  <main
+    style={{
+      minHeight: '100vh',
+      background: colours.bg,
+      color: colours.text,
+      padding: '16px 14px 100px',
+      fontFamily: "'VT323', monospace",
+      fontSize: 20,
+      boxSizing: 'border-box',
+      width: '100%',
+      maxWidth: 480,
+      margin: '0 auto',
+      position: 'relative',
+    }}
+  >
+
+    <style>{`
         @media (min-width: 700px) {
           body {
             background-color: #101722;
@@ -833,799 +833,798 @@ if (!started) {
           cursor: not-allowed;
         }
       `}</style>
-      {/* HEADER */}
-      <header
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          borderBottom: '3px solid #34445E',
-          paddingBottom: 14,
-          marginBottom: 20,
-        }}
-      >
-      
+    {/* HEADER */}
+    <header
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderBottom: '3px solid #34445E',
+        paddingBottom: 14,
+        marginBottom: 20,
+      }}
+    >
+
       <div>
-        <div style={{ ...mutedLabel, fontSize:7}}>
+        <div style={{ ...mutedLabel, fontSize: 7 }}>
           By Amogh Acharjee And Prabhav Kanoi
         </div>
       </div>
-        <div
-          style={{
-            background: '#263247',
-            border: '3px solid #101722',
-            padding: '8px 12px',
-            color: colours.paleGold,
-            fontSize: 20,
-          }}
-        >
-          ★ {xp} XP
-        </div>
-      </header>
-
-      {/* HOME */}
-      {page === 'home' && (
-        <>
-          <Panel style={{ padding: 0, overflow: 'hidden' }}>
-          <p style={{ color: 'white' }}>
-</p>
-<div style={{
-  background: '#1B2637',
-  borderBottom: '3px solid #101722',
-  padding: '20px 16px',
-  textAlign: 'center',
-}}>
-  <div style={{
-    ...pixelText,
-    color: colours.paleGold,
-    fontSize: 18,
-  }}>
-    SIDEQUEST<span style={{ color: colours.blue }}>.</span>
-  </div>
-
-  <div style={{
-    ...mutedLabel,
-    color: colours.green,
-    marginTop: 8,
-  }}>
-    REAL SKILLS. SIDE QUESTS.
-  </div>
-
-  <div style={{
-    ...bodyText,
-    marginTop: 8,
-  }}>
-    A new way to level up your real life.
-  </div>
-</div>
-            <div style={{ padding: 18 }}>
-              <div style={{ ...mutedLabel, color: colours.gold }}>
-                YOUR ADVENTURE BEGINS
-              </div>
-              <h1
-                style={{
-                  ...pixelText,
-                  fontSize: 22,
-                  lineHeight: 1.7,
-                  margin: '14px 0',
-                }}
-              >
-                LEVEL UP
-                <br />
-                YOUR REAL
-                <br />
-                <span style={{ color: colours.paleGold }}>LIFE.</span>
-              </h1>
-              <p style={{ ...bodyText, marginBottom: 14 }}>
-                Learn useful skills. Complete quests. Unlock achievements.
-              </p>
-              <div
-                style={{
-                  display: 'inline-block',
-                  background: colours.blue,
-                  border: '3px solid #101722',
-                  padding: '8px 12px',
-                  ...pixelText,
-                  fontSize: 9,
-                }}
-              >
-                PLAYER LEVEL 1
-              </div>
-            </div>
-          </Panel>
-
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}
-          >
-            <Panel>
-              <div style={mutedLabel}>TOTAL XP</div>
-              <div style={{ ...titleStyle, fontSize: 25 }}>{xp}</div>
-            </Panel>
-            <Panel>
-              <div style={mutedLabel}>QUESTS DONE</div>
-              <div style={{ ...titleStyle, fontSize: 25 }}>
-                {completed.length}/35
-              </div>
-            </Panel>
-          </div>
-
-          <Panel>
-            <div style={mutedLabel}>PLAYER PROGRESS</div>
-            <div style={{ margin: '12px 0' }}>
-              <ProgressBar value={completed.length} total={35} />
-            </div>
-            <div style={{ color: colours.muted, fontSize: 17 }}>
-              {completed.length} of 35 quests completed
-            </div>
-          </Panel>
-
-          <h2 style={titleStyle}>QUEST WORLDS</h2>
-          <p style={mutedLabel}>CHOOSE YOUR NEXT ADVENTURE</p>
-          <div
-            style={{
-              position: "relative",
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 110px)",
-              gridTemplateRows: "repeat(3, 110px)",
-              gap: "18px",
-              justifyContent: "center",
-              padding: "20px 10px"
-            }}
-          >
-            <svg
-              style={{
-                position: "absolute",
-                top: "20px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "366px",
-                height: "366px",
-                pointerEvents: "none",
-                zIndex: 0
-              }}
-              viewBox="0 0 366 366"
-            >
-              <g fill="none" strokeLinecap="square" strokeLinejoin="miter">
-                {/* Dark borders */}
-                <g stroke="#020000" strokeWidth="20">
-                  <path d="M160 128 V55 H110" />
-                  <path d="M206 128 V82 H256" />
-                  <path d="M160 183 H65 V296" />
-                  <path d="M183 238 V311 H256" />
-                </g>
-
-                {/* Inner lines */}
-                <g stroke="#718096" strokeWidth="10">
-                  <path d="M160 128 V55 H110" />
-                  <path d="M206 128 V82 H256" />
-                  <path d="M160 183 H65 V296" />
-                  <path d="M183 238 V311 H256" />
-                </g>
-              </g>
-            </svg>
-            {courses.map((course) => (
-              <button
-                key={course.name}
-                onClick={() => {
-                  setSelectedCourse(course.name);
-                  setPage('course');
-                }}
-                style={{
-                  background: '#30394a',
-                  border: '4px solid #101722',
-                  borderRadius: '3px',
-                  boxShadow:
-                    '0 6px 0 #0c111a, inset 3px 3px 0 #526078, inset -3px -3px 0 #222b3b',
-                  padding: '18px',
-                  color: '#f4f0df',
-                  textAlign: 'center',
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  overflow: "hidden",
-                  gridColumn:
-                    course.name === "Digital Survivor" || course.name === "LifeCraft" ? "1" :
-                    course.name === "Money Matters" || course.name === "Ready Player One" ? "3" : "2",
-                  gridRow:
-                    course.name === "Digital Survivor" ? "1" :
-                    course.name === "Money Matters" ? "1" :
-                    course.name === "Social XP" ? "2" :
-                    course.name === "LifeCraft" ? "3" : "3",
-                  position: 'relative',
-                  transform:
-                    course.name === "Money Matters" ? "translateY(27px)" :
-                    course.name === "LifeCraft" ? "translateY(-15px)" :
-                    "none",
-                }}
-              >
-                <PixelIcon type={course.symbol} colour={course.colour} />
-                <div style={{ fontSize: '14px', marginTop: '5px' }}>
-                  {course.name}
-                </div>
-                <span style={{ color: colours.paleGold, fontSize: 24 }}>›</span>
-              </button>
-            ))}
-          </div>
-        </>
-      )}
-
-      {/* COURSE PAGE */}
-{page === 'course' && (
-  <>
-    <PixelButton onClick={goHome}>← BACK HOME</PixelButton>
-
-    <div style={{ ...mutedLabel, marginTop: 20 }}>QUEST WORLD</div>
-    <h1 style={titleStyle}>{selectedCourse}</h1>
-
-    <Panel>
-      <div style={mutedLabel}>WORLD PROGRESS</div>
-      <h2 style={titleStyle}>{courseCompleted}/7</h2>
-      <ProgressBar value={courseCompleted} total={7} />
-      <p style={{ ...bodyText, marginTop: 10 }}>
-        {courseCompleted} of 7 quests completed
-      </p>
-    </Panel>
-
-    <h3 style={titleStyle}>AVAILABLE QUESTS</h3>
-
-    {courseChallenges.map((challenge) => (
-      <button
-        key={challenge.id}
-        onClick={() => openChallenge(challenge)}
+      <div
         style={{
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 12,
-          textAlign: 'left',
-          padding: 14,
-          marginBottom: 12,
-          background: colours.panel,
-          color: colours.text,
-          border: `3px solid ${
-            completed.includes(challenge.id)
-              ? colours.green
-              : '#101722'
-          }`,
-          boxShadow: '0 4px 0 #0C111A',
+          background: '#263247',
+          border: '3px solid #101722',
+          padding: '8px 12px',
+          color: colours.paleGold,
+          fontSize: 20,
         }}
       >
-        <span
+        ★ {xp} XP
+      </div>
+    </header>
+
+    {/* HOME */}
+    {page === 'home' && (
+      <>
+        <Panel style={{ padding: 0, overflow: 'hidden' }}>
+          <p style={{ color: 'white' }}>
+          </p>
+          <div style={{
+            background: '#1B2637',
+            borderBottom: '3px solid #101722',
+            padding: '20px 16px',
+            textAlign: 'center',
+          }}>
+            <div style={{
+              ...pixelText,
+              color: colours.paleGold,
+              fontSize: 18,
+            }}>
+              SIDEQUEST<span style={{ color: colours.blue }}>.</span>
+            </div>
+
+            <div style={{
+              ...mutedLabel,
+              color: colours.green,
+              marginTop: 8,
+            }}>
+              REAL SKILLS. SIDE QUESTS.
+            </div>
+
+            <div style={{
+              ...bodyText,
+              marginTop: 8,
+            }}>
+              A new way to level up your real life.
+            </div>
+          </div>
+          <div style={{ padding: 18 }}>
+            <div style={{ ...mutedLabel, color: colours.gold }}>
+              YOUR ADVENTURE BEGINS
+            </div>
+            <h1
+              style={{
+                ...pixelText,
+                fontSize: 22,
+                lineHeight: 1.7,
+                margin: '14px 0',
+              }}
+            >
+              LEVEL UP
+              <br />
+              YOUR REAL
+              <br />
+              <span style={{ color: colours.paleGold }}>LIFE.</span>
+            </h1>
+            <p style={{ ...bodyText, marginBottom: 14 }}>
+              Learn useful skills. Complete quests. Unlock achievements.
+            </p>
+            <div
+              style={{
+                display: 'inline-block',
+                background: colours.blue,
+                border: '3px solid #101722',
+                padding: '8px 12px',
+                ...pixelText,
+                fontSize: 9,
+              }}
+            >
+              PLAYER LEVEL 1
+            </div>
+          </div>
+        </Panel>
+
+        <div
+          style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}
+        >
+          <Panel>
+            <div style={mutedLabel}>TOTAL XP</div>
+            <div style={{ ...titleStyle, fontSize: 25 }}>{xp}</div>
+          </Panel>
+          <Panel>
+            <div style={mutedLabel}>QUESTS DONE</div>
+            <div style={{ ...titleStyle, fontSize: 25 }}>
+              {completed.length}/35
+            </div>
+          </Panel>
+        </div>
+
+        <Panel>
+          <div style={mutedLabel}>PLAYER PROGRESS</div>
+          <div style={{ margin: '12px 0' }}>
+            <ProgressBar value={completed.length} total={35} />
+          </div>
+          <div style={{ color: colours.muted, fontSize: 17 }}>
+            {completed.length} of 35 quests completed
+          </div>
+        </Panel>
+
+        <h2 style={titleStyle}>QUEST WORLDS</h2>
+        <p style={mutedLabel}>CHOOSE YOUR NEXT ADVENTURE</p>
+        <div
           style={{
-            color: completed.includes(challenge.id)
-              ? colours.green
-              : colours.gold,
-            fontSize: 25,
+            position: "relative",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 110px)",
+            gridTemplateRows: "repeat(3, 110px)",
+            gap: "18px",
+            justifyContent: "center",
+            padding: "20px 10px"
           }}
         >
-          {completed.includes(challenge.id) ? '✓' : '◆'}
-        </span>
-
-        <span style={{ flex: 1 }}>
-          <span style={{ display: 'block', fontSize: 21 }}>
-            {challenge.name}
-          </span>
-          <span style={{ color: colours.muted, fontSize: 16 }}>
-            +20 XP
-          </span>
-        </span>
-
-        <span style={{ color: colours.paleGold }}>›</span>
-      </button>
-    ))}
-  </>
-)}
-      {/* CHALLENGE PAGE */}
-      {page === 'challenge' && selectedChallenge && (
-        <>
-          <PixelButton onClick={() => setPage('course')}>
-            ← BACK TO QUESTS
-          </PixelButton>
-
-          <div style={{ ...mutedLabel, marginTop: 20 }}>
-          {selectedCourse.toUpperCase()} / QUEST {selectedChallenge.id}
-          </div>
-          <h1 style={titleStyle}>{selectedChallenge.name}</h1>
-
-          <Panel>
-            <div style={mutedLabel}>SKILL TO UNLOCK</div>
-            <p style={{ color: colours.paleGold, fontSize: 20 }}>
-              {selectedChallenge.skill}
-            </p>
-          </Panel>
-
-          <div
+          <svg
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: 5,
-              margin: '20px 0',
+              position: "absolute",
+              top: "20px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "366px",
+              height: "366px",
+              pointerEvents: "none",
+              zIndex: 0
+            }}
+            viewBox="0 0 366 366"
+          >
+            <g fill="none" strokeLinecap="square" strokeLinejoin="miter">
+              {/* Dark borders */}
+              <g stroke="#020000" strokeWidth="20">
+                <path d="M160 128 V55 H110" />
+                <path d="M206 128 V82 H256" />
+                <path d="M160 183 H65 V296" />
+                <path d="M183 238 V311 H256" />
+              </g>
+
+              {/* Inner lines */}
+              <g stroke="#718096" strokeWidth="10">
+                <path d="M160 128 V55 H110" />
+                <path d="M206 128 V82 H256" />
+                <path d="M160 183 H65 V296" />
+                <path d="M183 238 V311 H256" />
+              </g>
+            </g>
+          </svg>
+          {courses.map((course) => (
+            <button
+              key={course.name}
+              onClick={() => {
+                setSelectedCourse(course.name);
+                setPage('course');
+              }}
+              style={{
+                background: '#30394a',
+                border: '4px solid #101722',
+                borderRadius: '3px',
+                boxShadow:
+                  '0 6px 0 #0c111a, inset 3px 3px 0 #526078, inset -3px -3px 0 #222b3b',
+                padding: '18px',
+                color: '#f4f0df',
+                textAlign: 'center',
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+                gridColumn:
+                  course.name === "Digital Survivor" || course.name === "LifeCraft" ? "1" :
+                    course.name === "Money Matters" || course.name === "Ready Player One" ? "3" : "2",
+                gridRow:
+                  course.name === "Digital Survivor" ? "1" :
+                    course.name === "Money Matters" ? "1" :
+                      course.name === "Social XP" ? "2" :
+                        course.name === "LifeCraft" ? "3" : "3",
+                position: 'relative',
+                transform:
+                  course.name === "Money Matters" ? "translateY(27px)" :
+                    course.name === "LifeCraft" ? "translateY(-15px)" :
+                      "none",
+              }}
+            >
+              <PixelIcon type={course.symbol} colour={course.colour} />
+              <div style={{ fontSize: '14px', marginTop: '5px' }}>
+                {course.name}
+              </div>
+              <span style={{ color: colours.paleGold, fontSize: 24 }}>›</span>
+            </button>
+          ))}
+        </div>
+      </>
+    )}
+
+    {/* COURSE PAGE */}
+    {page === 'course' && (
+      <>
+        <PixelButton onClick={goHome}>← BACK HOME</PixelButton>
+
+        <div style={{ ...mutedLabel, marginTop: 20 }}>QUEST WORLD</div>
+        <h1 style={titleStyle}>{selectedCourse}</h1>
+
+        <Panel>
+          <div style={mutedLabel}>WORLD PROGRESS</div>
+          <h2 style={titleStyle}>{courseCompleted}/7</h2>
+          <ProgressBar value={courseCompleted} total={7} />
+          <p style={{ ...bodyText, marginTop: 10 }}>
+            {courseCompleted} of 7 quests completed
+          </p>
+        </Panel>
+
+        <h3 style={titleStyle}>AVAILABLE QUESTS</h3>
+
+        {courseChallenges.map((challenge) => (
+          <button
+            key={challenge.id}
+            onClick={() => openChallenge(challenge)}
+            style={{
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              textAlign: 'left',
+              padding: 14,
+              marginBottom: 12,
+              background: colours.panel,
+              color: colours.text,
+              border: `3px solid ${completed.includes(challenge.id)
+                  ? colours.green
+                  : '#101722'
+                }`,
+              boxShadow: '0 4px 0 #0C111A',
             }}
           >
-            {['LEARN', 'EXAMPLE', 'PRACTISE', 'DONE'].map((name, i) => (
+            <span
+              style={{
+                color: completed.includes(challenge.id)
+                  ? colours.green
+                  : colours.gold,
+                fontSize: 25,
+              }}
+            >
+              {completed.includes(challenge.id) ? '✓' : '◆'}
+            </span>
+
+            <span style={{ flex: 1 }}>
+              <span style={{ display: 'block', fontSize: 21 }}>
+                {challenge.name}
+              </span>
+              <span style={{ color: colours.muted, fontSize: 16 }}>
+                +20 XP
+              </span>
+            </span>
+
+            <span style={{ color: colours.paleGold }}>›</span>
+          </button>
+        ))}
+      </>
+    )}
+    {/* CHALLENGE PAGE */}
+    {page === 'challenge' && selectedChallenge && (
+      <>
+        <PixelButton onClick={() => setPage('course')}>
+          ← BACK TO QUESTS
+        </PixelButton>
+
+        <div style={{ ...mutedLabel, marginTop: 20 }}>
+          {selectedCourse.toUpperCase()} / QUEST {selectedChallenge.id}
+        </div>
+        <h1 style={titleStyle}>{selectedChallenge.name}</h1>
+
+        <Panel>
+          <div style={mutedLabel}>SKILL TO UNLOCK</div>
+          <p style={{ color: colours.paleGold, fontSize: 20 }}>
+            {selectedChallenge.skill}
+          </p>
+        </Panel>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 5,
+            margin: '20px 0',
+          }}
+        >
+          {['LEARN', 'EXAMPLE', 'PRACTISE', 'DONE'].map((name, i) => (
+            <div
+              key={name}
+              style={{
+                textAlign: 'center',
+                padding: '9px 2px',
+                background: i <= stage ? '#285B8F' : colours.panel,
+                border: `3px solid ${i <= stage ? colours.blue : '#101722'}`,
+                fontSize: 13,
+              }}
+            >
+              {name}
+            </div>
+          ))}
+        </div>
+
+        <Panel>
+          {stage === 0 && (
+            <>
+              <div style={{ ...mutedLabel, color: colours.gold }}>
+                01 / LEARN
+              </div>
+              <h2 style={titleStyle}>UNDERSTAND THE SKILL</h2>
+              <p style={bodyText}>{selectedChallenge.learn}</p>
               <div
-                key={name}
                 style={{
-                  textAlign: 'center',
-                  padding: '9px 2px',
-                  background: i <= stage ? '#285B8F' : colours.panel,
-                  border: `3px solid ${i <= stage ? colours.blue : '#101722'}`,
-                  fontSize: 13,
+                  background: '#1B2637',
+                  padding: 13,
+                  borderLeft: `5px solid ${colours.gold}`,
                 }}
               >
-                {name}
-              </div>
-            ))}
-          </div>
-
-          <Panel>
-            {stage === 0 && (
-              <>
                 <div style={{ ...mutedLabel, color: colours.gold }}>
-                  01 / LEARN
-                </div>
-                <h2 style={titleStyle}>UNDERSTAND THE SKILL</h2>
-                <p style={bodyText}>{selectedChallenge.learn}</p>
-                <div
-                  style={{
-                    background: '#1B2637',
-                    padding: 13,
-                    borderLeft: `5px solid ${colours.gold}`,
-                  }}
-                >
-                  <div style={{ ...mutedLabel, color: colours.gold }}>
-                    WHY IT MATTERS
-                  </div>
-                  <p style={bodyText}>
-                    This skill helps you make better decisions in everyday life.
-                  </p>
-                </div>
-              </>
-            )}
-
-            {stage === 1 && (
-              <>
-                <div style={{ ...mutedLabel, color: colours.gold }}>
-                  02 / EXAMPLE
-                </div>
-                <h2 style={titleStyle}>SEE IT IN ACTION</h2>
-                <p style={bodyText}>{selectedChallenge.example}</p>
-                <div
-                  style={{
-                    background: '#1B2637',
-                    padding: 15,
-                    border: '3px dashed #52627B',
-                  }}
-                >
-                  <div style={{ ...mutedLabel, color: colours.gold }}>
-                    PRO TIP
-                  </div>
-                  <p style={bodyText}>{selectedChallenge.tip}</p>
-                </div>
-              </>
-            )}
-
-            {stage === 2 && (
-              <>
-                <div style={{ ...mutedLabel, color: colours.gold }}>
-                  03 / PRACTISE
-                </div>
-                <h2 style={titleStyle}>YOUR MISSION</h2>
-                <p style={bodyText}>{selectedChallenge.task}</p>
-
-                {isPassword ? (
-                  <>
-                    <label style={{ color: colours.gold, fontSize: 17 }}>
-                      BUILD A PRACTICE PASSWORD
-                    </label>
-                    <input
-                      type="text"
-                      value={practice}
-                      onChange={(e) => setPractice(e.target.value)}
-                      placeholder="Make up a password..."
-                      autoComplete="off"
-                      style={{
-                        width: '100%',
-                        padding: 13,
-                        marginTop: 10,
-                        background: '#111A28',
-                        color: 'white',
-                        border: '3px solid #52627B',
-                        boxSizing: 'border-box',
-                        fontSize: 19,
-                      }}
-                    />
-                    <p style={{ color: colours.muted, fontSize: 16 }}>
-                      Use a made-up password, never a real account password.
-                    </p>
-                    {selectedChallenge.requirements.map((item, i) => {
-                      const valid =
-                        i === 0
-                          ? practice.length >= 12
-                          : i === 1
-                          ? /[A-Z]/.test(practice) && /[a-z]/.test(practice)
-                          : /[\d\W]/.test(practice);
-
-                      return (
-                        <div
-                          key={item}
-                          style={{
-                            padding: '8px 0',
-                            color: valid ? colours.green : colours.muted,
-                            fontSize: 18,
-                          }}
-                        >
-                          {valid ? '✓ ' : '□ '}
-                          {item}
-                        </div>
-                      );
-                    })}
-                  </>
-                ) : (
-                  <>
-                    <p style={{ color: colours.gold, fontSize: 17 }}>
-                      COMPLETE AT LEAST TWO STEPS
-                    </p>
-                    {selectedChallenge.requirements.map((item) => (
-                      <label
-                        key={item}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 12,
-                          padding: 12,
-                          borderBottom: '1px solid #46536A',
-                          color: '#D5DCE8',
-                          fontFamily: 'Arial, sans-serif',
-                          fontSize: 14,
-                        }}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={checks.includes(item)}
-                          onChange={() => toggleCheck(item)}
-                        />
-                        {item}
-                      </label>
-                    ))}
-                  </>
-                )}
-
-                <div
-                  style={{
-                    color: taskReady ? colours.green : colours.gold,
-                    fontSize: 17,
-                    marginTop: 15,
-                  }}
-                >
-                  {taskReady
-                    ? '✓ MISSION REQUIREMENTS MET'
-                    : 'MISSION IN PROGRESS...'}
-                </div>
-              </>
-            )}
-
-            {stage === 3 && (
-              <>
-                <div style={{ ...mutedLabel, color: colours.green }}>
-                  04 / COMPLETE
-                </div>
-                <h2 style={{ ...titleStyle, color: colours.green }}>
-                  QUEST COMPLETED!
-                </h2>
-                <div
-                  style={{
-                    textAlign: 'center',
-                    padding: 20,
-                    background: '#1B2637',
-                    margin: '15px 0',
-                  }}
-                >
-                  <div style={{ fontSize: 48, color: colours.gold }}>★</div>
-                  <h1 style={{ ...titleStyle, fontSize: 30 }}>+20 XP</h1>
-                  <div style={mutedLabel}>SKILL UNLOCKED</div>
+                  WHY IT MATTERS
                 </div>
                 <p style={bodyText}>
-                  You've completed {selectedChallenge.name} and practised{' '}
-                  {selectedChallenge.skill.toLowerCase()}.
+                  This skill helps you make better decisions in everyday life.
                 </p>
-                <PixelButton
-                  onClick={() => setPage('course')}
-                  colour={colours.blue}
-                >
-                  RETURN TO QUESTS →
-                </PixelButton>
-              </>
-            )}
-          </Panel>
+              </div>
+            </>
+          )}
 
-          {stage < 2 && (
-            <PixelButton
-              onClick={() => setStage(stage + 1)}
-              colour={colours.blue}
-            >
-              CONTINUE →
-            </PixelButton>
+          {stage === 1 && (
+            <>
+              <div style={{ ...mutedLabel, color: colours.gold }}>
+                02 / EXAMPLE
+              </div>
+              <h2 style={titleStyle}>SEE IT IN ACTION</h2>
+              <p style={bodyText}>{selectedChallenge.example}</p>
+              <div
+                style={{
+                  background: '#1B2637',
+                  padding: 15,
+                  border: '3px dashed #52627B',
+                }}
+              >
+                <div style={{ ...mutedLabel, color: colours.gold }}>
+                  PRO TIP
+                </div>
+                <p style={bodyText}>{selectedChallenge.tip}</p>
+              </div>
+            </>
           )}
 
           {stage === 2 && (
-            <PixelButton
-              onClick={completeChallenge}
-              colour={colours.blue}
-              disabled={!taskReady}
-            >
-              COMPLETE QUEST ★
-            </PixelButton>
-          )}
-        </>
-      )}
+            <>
+              <div style={{ ...mutedLabel, color: colours.gold }}>
+                03 / PRACTISE
+              </div>
+              <h2 style={titleStyle}>YOUR MISSION</h2>
+              <p style={bodyText}>{selectedChallenge.task}</p>
 
-      {/* ADVANCEMENTS */}
-      {page === 'advancements' && (
-        <>
-          <div style={mutedLabel}>YOUR PROGRESSION</div>
-          <h1 style={titleStyle}>ADVANCEMENTS</h1>
-          <p style={bodyText}>
-            Complete quests to unlock achievements and explore your progress.
-          </p>
+              {isPassword ? (
+                <>
+                  <label style={{ color: colours.gold, fontSize: 17 }}>
+                    BUILD A PRACTICE PASSWORD
+                  </label>
+                  <input
+                    type="text"
+                    value={practice}
+                    onChange={(e) => setPractice(e.target.value)}
+                    placeholder="Make up a password..."
+                    autoComplete="off"
+                    style={{
+                      width: '100%',
+                      padding: 13,
+                      marginTop: 10,
+                      background: '#111A28',
+                      color: 'white',
+                      border: '3px solid #52627B',
+                      boxSizing: 'border-box',
+                      fontSize: 19,
+                    }}
+                  />
+                  <p style={{ color: colours.muted, fontSize: 16 }}>
+                    Use a made-up password, never a real account password.
+                  </p>
+                  {selectedChallenge.requirements.map((item, i) => {
+                    const valid =
+                      i === 0
+                        ? practice.length >= 12
+                        : i === 1
+                          ? /[A-Z]/.test(practice) && /[a-z]/.test(practice)
+                          : /[\d\W]/.test(practice);
 
-          <Panel>
-            <div style={mutedLabel}>TOTAL PROGRESS</div>
-            <h2 style={titleStyle}>{completed.length}/35 QUESTS</h2>
-            <ProgressBar value={completed.length} total={35} />
-          </Panel>
-          <h2 style={{
-  fontFamily: '"Press Start 2P", cursive',
-  fontSize: '16px',
-  color: '#FFC45C',
-  textAlign: 'center',
-  letterSpacing: '2px',
-  margin: '28px 0 22px',
-  textShadow: '3px 3px 0 #101722',
-  borderTop: '3px solid #E69A35',
-  borderBottom: '3px solid #E69A35',
-  padding: '16px 8px'
-}}>
-  WORLD ACHIEVEMENTS
-</h2>
-          {[
-  {
-    world: 'DIGITAL SURVIVOR',
-    start: 1,
-    achievements: [
-      { name: 'First Steps', detail: 'Complete your first digital quest', requirement: 1 },
-      { name: 'Digital Explorer', detail: 'Complete three digital quests', requirement: 3 },
-      { name: 'Cyber Guardian', detail: 'Complete all seven digital quests', requirement: 7 },
-    ],
-  },
-  {
-    world: 'MONEY MATTERS',
-    start: 8,
-    achievements: [
-      { name: 'First Coins', detail: 'Complete your first money quest', requirement: 1 },
-      { name: 'Smart Saver', detail: 'Complete three money quests', requirement: 3 },
-      { name: 'Money Master', detail: 'Complete all seven money quests', requirement: 7 },
-    ],
-  },
-  {
-    world: 'SOCIAL XP',
-    start: 15,
-    achievements: [
-      { name: 'First Connection', detail: 'Complete your first social quest', requirement: 1 },
-      { name: 'Team Player', detail: 'Complete three social quests', requirement: 3 },
-      { name: 'Social Master', detail: 'Complete all seven social quests', requirement: 7 },
-    ],
-  },
-  {
-    world: 'LIFECRAFT',
-    start: 22,
-    achievements: [
-      { name: 'Getting Started', detail: 'Complete your first LifeCraft quest', requirement: 1 },
-      { name: 'Everyday Expert', detail: 'Complete three LifeCraft quests', requirement: 3 },
-      { name: 'LifeCraft Master', detail: 'Complete all seven LifeCraft quests', requirement: 7 },
-    ],
-  },
-  {
-    world: 'READY PLAYER ONE',
-    start: 29,
-    achievements: [
-      { name: 'Player One', detail: 'Complete your first quest', requirement: 1 },
-      { name: 'Skill Builder', detail: 'Complete three quests', requirement: 3 },
-      { name: 'Ready Player One', detail: 'Complete all seven quests', requirement: 7 },
-    ],
-  },
-].map((world) => {
-  const worldCompleted = completed.filter(
-    (id) => id >= world.start && id <= world.start + 6
-  ).length;
-  const worldCleared = worldCompleted === 7;
-  const worldProgress = `${worldCompleted}/7 QUESTS COMPLETED`;
-  return (
-    <div key={world.world}>
-      <h3 style={titleStyle}>{world.world}</h3>
-      {worldCleared && (
-  <div style={{ color: colours.gold, fontWeight: 'bold', marginBottom: 12 }}>
-    ★ WORLD CLEARED! ★
-  </div>
-)}
-<div style={mutedLabel}>
-  {worldProgress}
-</div>
-      <div
-        style={{
-          borderLeft: '4px solid #46536A',
-          marginLeft: 15,
-          paddingLeft: 15,
-        }}
-      >
-        {world.achievements.map((achievement) => {
-          const unlocked = worldCompleted >= achievement.requirement;
+                    return (
+                      <div
+                        key={item}
+                        style={{
+                          padding: '8px 0',
+                          color: valid ? colours.green : colours.muted,
+                          fontSize: 18,
+                        }}
+                      >
+                        {valid ? '✓ ' : '□ '}
+                        {item}
+                      </div>
+                    );
+                  })}
+                </>
+              ) : (
+                <>
+                  <p style={{ color: colours.gold, fontSize: 17 }}>
+                    COMPLETE AT LEAST TWO STEPS
+                  </p>
+                  {selectedChallenge.requirements.map((item) => (
+                    <label
+                      key={item}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 12,
+                        padding: 12,
+                        borderBottom: '1px solid #46536A',
+                        color: '#D5DCE8',
+                        fontFamily: 'Arial, sans-serif',
+                        fontSize: 14,
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={checks.includes(item)}
+                        onChange={() => toggleCheck(item)}
+                      />
+                      {item}
+                    </label>
+                  ))}
+                </>
+              )}
 
-          return (
-            <Panel
-              key={achievement.name}
-              style={{
-                borderColor: unlocked ? colours.gold : '#101722',
-                opacity: unlocked ? 1 : 0.65,
-              }}
-            >
               <div
                 style={{
-                  fontSize: 25,
-                  color: unlocked ? colours.gold : colours.muted,
+                  color: taskReady ? colours.green : colours.gold,
+                  fontSize: 17,
+                  marginTop: 15,
                 }}
               >
-                {unlocked ? '★' : '◇'}
+                {taskReady
+                  ? '✓ MISSION REQUIREMENTS MET'
+                  : 'MISSION IN PROGRESS...'}
               </div>
-              <h3 style={{ color: unlocked ? colours.gold : colours.muted }}>
-                {achievement.name}
-              </h3>
-              <p style={{ ...bodyText, fontSize: 13 }}>
-                {achievement.detail}
+            </>
+          )}
+
+          {stage === 3 && (
+            <>
+              <div style={{ ...mutedLabel, color: colours.green }}>
+                04 / COMPLETE
+              </div>
+              <h2 style={{ ...titleStyle, color: colours.green }}>
+                QUEST COMPLETED!
+              </h2>
+              <div
+                style={{
+                  textAlign: 'center',
+                  padding: 20,
+                  background: '#1B2637',
+                  margin: '15px 0',
+                }}
+              >
+                <div style={{ fontSize: 48, color: colours.gold }}>★</div>
+                <h1 style={{ ...titleStyle, fontSize: 30 }}>+20 XP</h1>
+                <div style={mutedLabel}>SKILL UNLOCKED</div>
+              </div>
+              <p style={bodyText}>
+                You've completed {selectedChallenge.name} and practised{' '}
+                {selectedChallenge.skill.toLowerCase()}.
               </p>
+              <PixelButton
+                onClick={() => setPage('course')}
+                colour={colours.blue}
+              >
+                RETURN TO QUESTS →
+              </PixelButton>
+            </>
+          )}
+        </Panel>
+
+        {stage < 2 && (
+          <PixelButton
+            onClick={() => setStage(stage + 1)}
+            colour={colours.blue}
+          >
+            CONTINUE →
+          </PixelButton>
+        )}
+
+        {stage === 2 && (
+          <PixelButton
+            onClick={completeChallenge}
+            colour={colours.blue}
+            disabled={!taskReady}
+          >
+            COMPLETE QUEST ★
+          </PixelButton>
+        )}
+      </>
+    )}
+
+    {/* ADVANCEMENTS */}
+    {page === 'advancements' && (
+      <>
+        <div style={mutedLabel}>YOUR PROGRESSION</div>
+        <h1 style={titleStyle}>ADVANCEMENTS</h1>
+        <p style={bodyText}>
+          Complete quests to unlock achievements and explore your progress.
+        </p>
+
+        <Panel>
+          <div style={mutedLabel}>TOTAL PROGRESS</div>
+          <h2 style={titleStyle}>{completed.length}/35 QUESTS</h2>
+          <ProgressBar value={completed.length} total={35} />
+        </Panel>
+        <h2 style={{
+          fontFamily: '"Press Start 2P", cursive',
+          fontSize: '16px',
+          color: '#FFC45C',
+          textAlign: 'center',
+          letterSpacing: '2px',
+          margin: '28px 0 22px',
+          textShadow: '3px 3px 0 #101722',
+          borderTop: '3px solid #E69A35',
+          borderBottom: '3px solid #E69A35',
+          padding: '16px 8px'
+        }}>
+          WORLD ACHIEVEMENTS
+        </h2>
+        {[
+          {
+            world: 'DIGITAL SURVIVOR',
+            start: 1,
+            achievements: [
+              { name: 'First Steps', detail: 'Complete your first digital quest', requirement: 1 },
+              { name: 'Digital Explorer', detail: 'Complete three digital quests', requirement: 3 },
+              { name: 'Cyber Guardian', detail: 'Complete all seven digital quests', requirement: 7 },
+            ],
+          },
+          {
+            world: 'MONEY MATTERS',
+            start: 8,
+            achievements: [
+              { name: 'First Coins', detail: 'Complete your first money quest', requirement: 1 },
+              { name: 'Smart Saver', detail: 'Complete three money quests', requirement: 3 },
+              { name: 'Money Master', detail: 'Complete all seven money quests', requirement: 7 },
+            ],
+          },
+          {
+            world: 'SOCIAL XP',
+            start: 15,
+            achievements: [
+              { name: 'First Connection', detail: 'Complete your first social quest', requirement: 1 },
+              { name: 'Team Player', detail: 'Complete three social quests', requirement: 3 },
+              { name: 'Social Master', detail: 'Complete all seven social quests', requirement: 7 },
+            ],
+          },
+          {
+            world: 'LIFECRAFT',
+            start: 22,
+            achievements: [
+              { name: 'Getting Started', detail: 'Complete your first LifeCraft quest', requirement: 1 },
+              { name: 'Everyday Expert', detail: 'Complete three LifeCraft quests', requirement: 3 },
+              { name: 'LifeCraft Master', detail: 'Complete all seven LifeCraft quests', requirement: 7 },
+            ],
+          },
+          {
+            world: 'READY PLAYER ONE',
+            start: 29,
+            achievements: [
+              { name: 'Player One', detail: 'Complete your first quest', requirement: 1 },
+              { name: 'Skill Builder', detail: 'Complete three quests', requirement: 3 },
+              { name: 'Ready Player One', detail: 'Complete all seven quests', requirement: 7 },
+            ],
+          },
+        ].map((world) => {
+          const worldCompleted = completed.filter(
+            (id) => id >= world.start && id <= world.start + 6
+          ).length;
+          const worldCleared = worldCompleted === 7;
+          const worldProgress = `${worldCompleted}/7 QUESTS COMPLETED`;
+          return (
+            <div key={world.world}>
+              <h3 style={titleStyle}>{world.world}</h3>
+              {worldCleared && (
+                <div style={{ color: colours.gold, fontWeight: 'bold', marginBottom: 12 }}>
+                  ★ WORLD CLEARED! ★
+                </div>
+              )}
               <div style={mutedLabel}>
-              {unlocked ? '★ UNLOCKED!' : '◇ LOCKED'}
+                {worldProgress}
               </div>
-            </Panel>
+              <div
+                style={{
+                  borderLeft: '4px solid #46536A',
+                  marginLeft: 15,
+                  paddingLeft: 15,
+                }}
+              >
+                {world.achievements.map((achievement) => {
+                  const unlocked = worldCompleted >= achievement.requirement;
+
+                  return (
+                    <Panel
+                      key={achievement.name}
+                      style={{
+                        borderColor: unlocked ? colours.gold : '#101722',
+                        opacity: unlocked ? 1 : 0.65,
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: 25,
+                          color: unlocked ? colours.gold : colours.muted,
+                        }}
+                      >
+                        {unlocked ? '★' : '◇'}
+                      </div>
+                      <h3 style={{ color: unlocked ? colours.gold : colours.muted }}>
+                        {achievement.name}
+                      </h3>
+                      <p style={{ ...bodyText, fontSize: 13 }}>
+                        {achievement.detail}
+                      </p>
+                      <div style={mutedLabel}>
+                        {unlocked ? '★ UNLOCKED!' : '◇ LOCKED'}
+                      </div>
+                    </Panel>
+                  );
+                })}
+              </div>
+            </div>
           );
         })}
-      </div>
-    </div>
-  );
-})}
-          <h3 style={titleStyle}>XP MILESTONES</h3>
-          {[100, 250, 500].map((value) => (
-            <Panel
-              key={value}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
-            >
-              <div>
-                <div style={{ color: colours.gold }}>★ {value} XP</div>
-                <div style={mutedLabel}>
-  {xp >= value ? 'REWARD UNLOCKED!' : `${value - xp} XP TO GO`}
-</div>
-                <div style={{ color: colours.muted, fontSize: 15 }}>
-                  EXPERIENCE MILESTONE
-                </div>
-              </div>
-              <div
-                style={{
-                  color: xp >= value ? colours.green : colours.muted,
-                  fontSize: 16,
-                }}
-              >
-                {xp >= value ? 'UNLOCKED ✓' : 'LOCKED ◇'}
-              </div>
-            </Panel>
-          ))}
-        </>
-      )}
-
-      {/* PROFILE */}
-      {page === 'profile' && (
-        <>
-          <div style={mutedLabel}>PLAYER PROFILE</div>
-          <h1 style={titleStyle}>YOUR STATS</h1>
-
-          <Panel style={{ textAlign: 'center', padding: 25 }}>
-            <div style={{ fontSize: 50, color: colours.gold }}>♟</div>
-            <h2 style={titleStyle}>
-  <input
-    value={username}
-    onChange={(e) => setUsername(e.target.value)}
-    placeholder="Enter username"
-    maxLength={18}
-    style={{
-      background: 'transparent',
-      border: 'none',
-      borderBottom: `2px solid ${colours.gold}`,
-      color: colours.text,
-      fontFamily: 'inherit',
-      fontSize: 16,
-      textAlign: 'center',
-display: 'block',
-      width: '100%',
-      outline: 'none',
-    }}
-  />
-</h2>
-            <div style={mutedLabel}></div>
-          </Panel>
-
-          {[
-            ['TOTAL XP', `${xp}`],
-            ['QUESTS COMPLETED', `${completed.length}/35`],
-            ['WORLDS EXPLORED', `${[
-              completed.some((id) => id >= 1 && id <= 7),
-              completed.some((id) => id >= 8 && id <= 14),
-              completed.some((id) => id >= 15 && id <= 21),
-              completed.some((id) => id >= 22 && id <= 28),
-              completed.some((id) => id >= 29 && id <= 35),
-            ].filter(Boolean).length}/5`],
-            ['COURSES AVAILABLE', '5'],
-          ].map(([label, value]) => (
-            <Panel
-              key={label}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
-            >
-              <span style={mutedLabel}>{label}</span>
-              <strong style={{ color: colours.gold }}>{value}</strong>
-            </Panel>
-          ))}
-        </>
-      )}
-
-      {/* BOTTOM NAVIGATION */}
-      <nav
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          background: '#111925',
-          borderTop: '4px solid #34445E',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          padding: '9px 5px',
-          zIndex: 10,
-        }}
-      >
-        {[
-          { id: 'home', icon: '⌂', label: 'HOME' },
-          { id: 'advancements', icon: '✧', label: 'ADVANCEMENTS' },
-          { id: 'profile', icon: '♟', label: 'PROFILE' },
-        ].map((item) => (
-          <button
-            key={item.id}
-            onClick={() => {
-              setSelectedChallenge(null);
-              setSelectedCourse('');
-              setPage(item.id);
-            }}
+        <h3 style={titleStyle}>XP MILESTONES</h3>
+        {[100, 250, 500].map((value) => (
+          <Panel
+            key={value}
             style={{
-              background: 'transparent',
-              border: 'none',
-              boxShadow: 'none',
-              color: page === item.id ? colours.paleGold : colours.muted,
-              fontFamily: "'Press Start 2P', monospace",
-              fontSize: 8,
-              padding: 5,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
             }}
           >
-            <div style={{ fontSize: 23, marginBottom: 5 }}>{item.icon}</div>
-            {item.label}
-          </button>
+            <div>
+              <div style={{ color: colours.gold }}>★ {value} XP</div>
+              <div style={mutedLabel}>
+                {xp >= value ? 'REWARD UNLOCKED!' : `${value - xp} XP TO GO`}
+              </div>
+              <div style={{ color: colours.muted, fontSize: 15 }}>
+                EXPERIENCE MILESTONE
+              </div>
+            </div>
+            <div
+              style={{
+                color: xp >= value ? colours.green : colours.muted,
+                fontSize: 16,
+              }}
+            >
+              {xp >= value ? 'UNLOCKED ✓' : 'LOCKED ◇'}
+            </div>
+          </Panel>
         ))}
-      </nav>
-    </main>
-  );
+      </>
+    )}
+
+    {/* PROFILE */}
+    {page === 'profile' && (
+      <>
+        <div style={mutedLabel}>PLAYER PROFILE</div>
+        <h1 style={titleStyle}>YOUR STATS</h1>
+
+        <Panel style={{ textAlign: 'center', padding: 25 }}>
+          <div style={{ fontSize: 50, color: colours.gold }}>♟</div>
+          <h2 style={titleStyle}>
+            <input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter username"
+              maxLength={18}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                borderBottom: `2px solid ${colours.gold}`,
+                color: colours.text,
+                fontFamily: 'inherit',
+                fontSize: 16,
+                textAlign: 'center',
+                display: 'block',
+                width: '100%',
+                outline: 'none',
+              }}
+            />
+          </h2>
+          <div style={mutedLabel}></div>
+        </Panel>
+
+        {[
+          ['TOTAL XP', `${xp}`],
+          ['QUESTS COMPLETED', `${completed.length}/35`],
+          ['WORLDS EXPLORED', `${[
+            completed.some((id) => id >= 1 && id <= 7),
+            completed.some((id) => id >= 8 && id <= 14),
+            completed.some((id) => id >= 15 && id <= 21),
+            completed.some((id) => id >= 22 && id <= 28),
+            completed.some((id) => id >= 29 && id <= 35),
+          ].filter(Boolean).length}/5`],
+          ['COURSES AVAILABLE', '5'],
+        ].map(([label, value]) => (
+          <Panel
+            key={label}
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <span style={mutedLabel}>{label}</span>
+            <strong style={{ color: colours.gold }}>{value}</strong>
+          </Panel>
+        ))}
+      </>
+    )}
+
+    {/* BOTTOM NAVIGATION */}
+    <nav
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        background: '#111925',
+        borderTop: '4px solid #34445E',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        padding: '9px 5px',
+        zIndex: 10,
+      }}
+    >
+      {[
+        { id: 'home', icon: '⌂', label: 'HOME' },
+        { id: 'advancements', icon: '✧', label: 'ADVANCEMENTS' },
+        { id: 'profile', icon: '♟', label: 'PROFILE' },
+      ].map((item) => (
+        <button
+          key={item.id}
+          onClick={() => {
+            setSelectedChallenge(null);
+            setSelectedCourse('');
+            setPage(item.id);
+          }}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            boxShadow: 'none',
+            color: page === item.id ? colours.paleGold : colours.muted,
+            fontFamily: "'Press Start 2P', monospace",
+            fontSize: 8,
+            padding: 5,
+          }}
+        >
+          <div style={{ fontSize: 23, marginBottom: 5 }}>{item.icon}</div>
+          {item.label}
+        </button>
+      ))}
+    </nav>
+  </main>
+);
 }
