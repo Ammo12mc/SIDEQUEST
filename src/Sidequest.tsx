@@ -588,6 +588,7 @@ function ProgressBar({ value, total }: { value: number; total: number }) {
 }
 
 export default function Sidequest() {
+  const [started, setStarted] = useState(false);
   const [page, setPage] = useState('home');
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(
@@ -683,7 +684,7 @@ const courseCompleted = courseChallenges.filter(
   }
 
   function toggleCheck(item: string) {
-    setChecks((previous) =>
+    setChecks((prfevious) =>
       previous.includes(item)
         ? previous.filter((value) => value !== item)
         : [...previous, item]
@@ -696,7 +697,48 @@ const courseCompleted = courseChallenges.filter(
     fontSize: 15,
     overflowWrap: 'anywhere',
   };
+if (!started) {
+    return (
+        <main style={{
+              minHeight: '100vh',
+                    background: '#101722',
+                          color: '#D6B96C',
+                                display: 'flex',
+                                      flexDirection: 'column',
+                                            justifyContent: 'center',
+                                                  alignItems: 'center',
+                                                        textAlign: 'center',
+                                                              padding: 24,
+                                                                    fontFamily: 'monospace',
+                                                                        }}>
+                                                                              <h1 style={{ fontSize: 48, letterSpacing: 5 }}>
+                                                                                      SIDEQUEST
+                                                                                            </h1>
 
+                                                                                                  <p style={{ color: '#FFFFFF', fontSize: 15 }}>
+                                                                                                          Your next skill starts here.
+                                                                                                                </p>
+
+                                                                                                                      <button
+                                                                                                                              onClick={() => setStarted(true)}
+                                                                                                                                      style={{
+                                                                                                                                                marginTop: 35,
+                                                                                                                                                          padding: '16px 40px',
+                                                                                                                                                                    background: '#D6B96C',
+                                                                                                                                                                              color: '#101722',
+                                                                                                                                                                                        border: 'none',
+                                                                                                                                                                                                  borderRadius: 8,
+                                                                                                                                                                                                            fontSize: 16,
+                                                                                                                                                                                                                      fontWeight: 'bold',
+                                                                                                                                                                                                                                cursor: 'pointer',
+                                                                                                                                                                                                                                        }}
+                                                                                                                                                                                                                                              >
+                                                                                                                                                                                                                                                      START QUEST →
+                                                                                                                                                                                                                                                            </button>
+                                                                                                                                                                                                                                                                </main>
+                                                                                                                                                                                                                                                                  );
+                                                                                                                                                                                                                                                                  }
+}
   return (
    <main
   style={{
