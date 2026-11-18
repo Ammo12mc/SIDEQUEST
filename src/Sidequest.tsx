@@ -783,8 +783,19 @@ export default function Sidequest() {
   }
 }
 
-.intro-exit {
-  animation: introExit 0.45s ease-in forwards;
+.intro-screen.intro-exit {
+  animation: introExit 0.8s ease-in forwards !important;
+}
+
+@keyframes introExit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.04);
+  }
 }
 `}</style>
 <div style={{
