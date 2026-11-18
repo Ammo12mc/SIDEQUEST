@@ -1,4 +1,8 @@
-import { useEffect, useState } from 'react';
+
+Sidequest.tsx
+
+100%
+import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 
 type Challenge = {
@@ -589,7 +593,26 @@ function ProgressBar({ value, total }: { value: number; total: number }) {
 
 export default function Sidequest() {
   const [started, setStarted] = useState(false);
-  const[exiting, setExiting]=useState(false);
+  const [exiting, setExiting] = useState(false);
+  const homeRef = useRef<HTMLElement>(null);
+  const startLocked = useRef(false);
+
+  function startQuest() {
+    if (startLocked.current) return;
+    startLocked.current = true;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setExiting(!reduced);
+    setStarted(true);
+  }
+
+  useEffect(() => {
+    if (!started) return;
+    const timer = window.setTimeout(() => {
+      setExiting(false);
+      homeRef.current?.focus({ preventScroll: true });
+    }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 900);
+    return () => window.clearTimeout(timer);
+  }, [started]);
   const [page, setPage] = useState('home');
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(
@@ -698,9 +721,11 @@ export default function Sidequest() {
     fontSize: 15,
     overflowWrap: 'anywhere',
   };
-  if (!started) {
-    return (
-      <main className={exiting? 'intro-screen intro-exit': 'intro-screen'} style={{
+  return (
+    <>
+    {(!started || exiting) && (
+      <main aria-label="Welcome to Sidequest" className={exiting ? 'intro-screen intro-exit' : 'intro-screen'} style={{
+        position: 'fixed', inset: 0, zIndex: 100, overflow: 'hidden',
         minHeight: '100vh',
         background: '#101722',
         color: '#D6B96C',
@@ -776,27 +801,22 @@ export default function Sidequest() {
 .intro-screen {
   animation: screenFade 1.2s ease-out both;
 }
+  /* Page-slide interaction adapted from the 21st.dev page-slide reference.
+     CSS keeps the existing lightweight React-only stack. */
   @keyframes introExit {
-  to {
-    opacity: 0;
-    transform: scale(1.04);
+    0% { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); }
+    75% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-8vh); clip-path: inset(0 0 100% 0); }
   }
-}
-
-.intro-screen.intro-exit {
-  animation: introExit 0.8s ease-in forwards !important;
-}
-
-@keyframes introExit {
-  from {
-    opacity: 1;
-    transform: scale(1);
+  .intro-exit {
+    pointer-events: none;
+    animation: introExit 820ms cubic-bezier(.76,0,.24,1) both;
   }
-  to {
-    opacity: 0;
-    transform: scale(1.04);
+  .intro-exit .intro-title { animation: none; transform: translateY(-12px); transition: transform 650ms ease; }
+  .intro-exit .intro-button { animation: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .intro-screen, .intro-exit, .intro-screen > div { animation: none !important; }
   }
-}
 `}</style>
 <div style={{
   position: 'absolute',
@@ -816,8 +836,8 @@ export default function Sidequest() {
   animation: 'floatStar 4s ease-in-out infinite 0.5s',
 }}>★</div>
         <h1 className="intro-title" style={{
-  fontSize: 48,
-  letterSpacing: 5,
+  fontSize: 'clamp(30px, 8vw, 48px)',
+  letterSpacing: 'clamp(1px, 1vw, 5px)',
   marginBottom: 15,
 }}>
   SIDEQUEST<span style={{ color: '#6FA8DC' }}>.</span>
@@ -833,10 +853,8 @@ export default function Sidequest() {
 
         <button
   className="intro-button"
-  onClick={() => {
-    setExiting(true);
-    setTimeout(() => setStarted(true), 2000);
-  }}
+  onClick={startQuest}
+  disabled={exiting}
   style={{
     marginTop: 35,
     padding: '16px 40px',
@@ -852,26 +870,14 @@ export default function Sidequest() {
 >
   START QUEST →
 </button>
-            marginTop: 35,
-            padding: '16px 40px',
-            background: '#D6B96C',
-            color: '#101722',
-            border: 'none',
-            borderRadius: 8,
-            fontSize: 16,
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease, box-shadow 0.3s ease'
-          }}
-        >
-          START QUEST →
-        </button>
       </main>
-    );
-  
-}
-return (
+    )}
+    {started && (
   <main
+    ref={homeRef}
+    tabIndex={-1}
+    aria-label="Sidequest home"
+    className="quest-home-enter"
     style={{
       minHeight: '100vh',
       background: colours.bg,
@@ -888,6 +894,12 @@ return (
   >
 
     <style>{`
+        @keyframes questHomeEnter {
+          from { opacity: .35; transform: translateY(36px) scale(.975); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .quest-home-enter { animation: questHomeEnter 900ms cubic-bezier(.22,1,.36,1) backwards; outline: none; }
+        @media (prefers-reduced-motion: reduce) { .quest-home-enter { animation: none; } }
         @media (min-width: 700px) {
           body {
             background-color: #101722;
@@ -1757,5 +1769,8 @@ return (
       ))}
     </nav>
   </main>
-);
+    )}
+    </>
+  );
 }
+Displaying Sidequest.tsx.
