@@ -699,7 +699,7 @@ export default function Sidequest() {
   };
   if (!started) {
     return (
-      <main style={{
+      <main className="intro-screen" style={{
         minHeight: '100vh',
         background: '#101722',
         color: '#D6B96C',
@@ -711,15 +711,106 @@ export default function Sidequest() {
         padding: 24,
         fontFamily: 'monospace',
       }}>
-        <h1 style={{ fontSize: 48, letterSpacing: 5 }}>
-          SIDEQUEST
-        </h1>
+        <style>{`
+  @keyframes titleReveal {
+    from {
+      opacity: 0;
+      transform: translateY(25px) scale(0.9);
+      text-shadow: 0 0 0 transparent;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      text-shadow: 0 0 25px rgba(214, 185, 108, 0.5);
+    }
+  }
 
-        <p style={{ color: '#FFFFFF', fontSize: 15 }}>
-          Your next skill starts here.
-        </p>
+  @keyframes subtitleReveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes buttonPulse {
+    0%, 100% { box-shadow: 0 0 0 rgba(214, 185, 108, 0); }
+    50% { box-shadow: 0 0 22px rgba(214, 185, 108, 0.45); }
+  }
+
+  .intro-title {
+    animation: titleReveal 1.2s ease-out both;
+  }
+
+  .intro-subtitle {
+    animation: subtitleReveal 1s ease-out 0.5s both;
+  }
+
+  .intro-button {
+    animation: subtitleReveal 0.8s ease-out 1s both,
+               buttonPulse 2s ease-in-out 2s infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .intro-title, .intro-subtitle, .intro-button {
+      animation: none;
+    }
+  }
+    @keyframes floatStar {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(15deg);
+  }
+}
+  @keyframes screenFade {
+  from {
+    opacity: 0;
+    background-color: #050910;
+  }
+  to {
+    opacity: 1;
+    background-color: #101722;
+  }
+}
+
+.intro-screen {
+  animation: screenFade 1.2s ease-out both;
+}
+`}</style>
+<div style={{
+  position: 'absolute',
+  top: '22%',
+  left: '15%',
+  fontSize: 25,
+  color: '#D6B96C',
+  animation: 'floatStar 3s ease-in-out infinite',
+}}>✦</div>
+
+<div style={{
+  position: 'absolute',
+  top: '30%',
+  right: '17%',
+  fontSize: 18,
+  color: '#6FA8DC',
+  animation: 'floatStar 4s ease-in-out infinite 0.5s',
+}}>★</div>
+        <h1 className="intro-title" style={{
+  fontSize: 48,
+  letterSpacing: 5,
+  marginBottom: 15,
+}}>
+  SIDEQUEST<span style={{ color: '#6FA8DC' }}>.</span>
+</h1>
+
+        <p className="intro-subtitle" style={{
+  color: '#FFFFFF',
+  fontSize: 15,
+  letterSpacing: 1,
+}}>
+  Your next skill starts here.
+</p>
 
         <button
+        className="intro-button"
           onClick={() => setStarted(true)}
           style={{
             marginTop: 35,
@@ -731,6 +822,7 @@ export default function Sidequest() {
             fontSize: 16,
             fontWeight: 'bold',
             cursor: 'pointer',
+            transition: 'transform 0.2s ease, box-shadow 0.3s ease'
           }}
         >
           START QUEST →
